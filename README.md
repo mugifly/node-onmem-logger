@@ -1,8 +1,17 @@
 # node-onmem-logger
+A simple on-memory logger for Node.js app.
 
+[![Version Badge](https://badge.fury.io/js/onmem-logger.svg)](https://badge.fury.io/js/onmem-logger)
+[![Build Status of master](https://travis-ci.org/mugifly/node-onmem-logger.svg?branch=master)](https://travis-ci.org/mugifly/node-onmem-logger)
 
+## Installation
 
-## Usage
+You can install the logger to your project with either one method:
+
+* Install with npm: ``npm install onmem-logger``
+* Clone the repository: ``git clone https://github.com/mugifly/onmem-logger.git``
+
+## Example code
 ```js
 // Get a logger as singleton
 var logger = require('onmem-logger').getInstance();
@@ -92,3 +101,9 @@ Get a log type as String object -- e.g. "debug"
 
 #### toString()
 Get a log item as a string. e.g. "[D 12:00:00] main / ...".
+
+## License
+```
+The MIT License (MIT).
+Copyright (c) 2015 Masanori Ohgita.
+```
