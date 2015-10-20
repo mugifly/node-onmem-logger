@@ -1,5 +1,5 @@
 {
-  "name": "ommem-logger",
+  "name": "onmem-logger",
   "version": "1.0.0",
   "description": "A simple on-memory logger for Node.js app",
   "main": "logger.js",
