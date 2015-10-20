@@ -60,14 +60,23 @@ Logger.prototype.getSerializedLogs = function() {
 
 	var self = this;
 
-	var logs = self.logs.concat(); // Copy the array
+	var logs = self.logs.concat();
 	for (var i = 0, l = logs.length; i < l; i++) {
+
+		var item = logs[i];
+
 		// Initial of type -- e.g. debug -> D
-		logs[i].typeInitial = (logs[i].type != null) ? logs[i].type.substr(0, 1).toUpperCase() : '?';
+		item.typeInitial = (item.type != null) ? item.type.substr(0, 1).toUpperCase() : '?';
 		// String of Created date - e.g. 12:00:00
-		logs[i].createdTimeStr = logs[i].getTimeString();
+		item.createdTimeStr = item.getCreatedTimeAsString();
 		// Log string - e.g. [D 12:00:00] Foo/Bar ...
-		logs[i].string = logs[i].toString();
+		item.string = item.toString();
+
+		// Delete a function
+		for (var key in item) {
+			if (self._is('Function', self.logs[i])) delete item[key];
+		}
+
 	}
 
 	return logs;

@@ -87,3 +87,30 @@ describe('Acquisition of logs', function() {
 	});
 
 });
+
+
+describe('Acquisition of selialized logs', function() {
+
+	var logger = Logger.getInstance();
+
+	it('Number of log items', function (done) {
+
+		var logs = logger.getSerializedLogs();
+		assert.equal(logs.length, 6);
+		done();
+
+	});
+
+	it('LogItem - First item', function (done) {
+
+		var logs = logger.getSerializedLogs();
+		assert.equal(logs[0].type, 'debug', 'Valid type');
+		assert.equal(logs[0].typeInitial, 'D', 'Valid type initial');
+		assert.equal(logs[0].text, 'This is debug log.', 'Valid text');
+		assert.equal(logs[0].tag, 'main', 'Valid tag');
+		assert.notEqual(logs[0].createdTimeStr.indexOf(':'), -1, 'Valid created time as string');
+		done();
+
+	});
+
+});
