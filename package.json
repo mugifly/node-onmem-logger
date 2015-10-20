@@ -1,6 +1,6 @@
 {
   "name": "onmem-logger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple on-memory logger for Node.js app",
   "main": "logger.js",
   "scripts": {
