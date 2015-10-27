@@ -28,6 +28,8 @@ for (var i = 0, l = logs; i < l; i++) {
 }
 ```
 
+The more examples is available on [here](https://github.com/mugifly/node-onmem-logger/wiki#examples).
+
 ## Features
 * Usable very easily.
 * Can be work on memory only.
