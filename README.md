@@ -1,5 +1,5 @@
 # node-onmem-logger
-A simple on-memory logger for Node.js app.
+A simple on-memory logger for Node.js / io.js app.
 
 [![Version Badge](https://badge.fury.io/js/onmem-logger.svg)](https://badge.fury.io/js/onmem-logger)
 [![Build Status of master](https://travis-ci.org/mugifly/node-onmem-logger.svg?branch=master)](https://travis-ci.org/mugifly/node-onmem-logger)
@@ -22,9 +22,9 @@ logger.error('main', 'Something happend :(');
 
 // Get a log
 var logs = logger.getLogs();
-for (var i = 0, l = logs; i < l; i++) {
+for (var i = 0, l = logs.length; i < l; i++) {
 	var item = logs[i];
-	console.log(i + ' - ' + item.getTag() + ' / ' + getText());
+	console.log(i + ' - ' + item.getTag() + ' / ' + item.getText());
 }
 ```
 
