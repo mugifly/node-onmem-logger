@@ -23,9 +23,9 @@ var Logger = function(options) {
 
 
 /**
-	Get an logger instance
-	@return  {Object} An instance of Logger
-**/
+ * Get an logger instance
+ * @return {Object} Instance
+ */
 Logger.getInstance = function() {
 
 	if (instance) return instance;
@@ -66,7 +66,7 @@ Logger.prototype.getSerializedLogs = function() {
 		var item = logs[i];
 
 		// Initial of type -- e.g. debug -> D
-		item.typeInitial = (item.type != null) ? item.type.substr(0, 1).toUpperCase() : '?';
+		item.typeInitial = item.getTypeInitial();
 		// String of Created date - e.g. 12:00:00
 		item.createdTimeStr = item.getCreatedTimeAsString();
 		// Log string - e.g. [D 12:00:00] Foo/Bar ...
@@ -284,6 +284,19 @@ LogItem.prototype.getType = function() {
 
 
 /**
+ * Get a type initial from the log item
+ * @return {String} Initial caractor of log type
+ */
+LogItem.prototype.getTypeInitial = function() {
+
+	var self = this;
+
+	return (self.type != null) ? self.type.substr(0, 1).toUpperCase() : '?';
+
+};
+
+
+/**
  * Get a string from the log item
  * @return {String} String
  */
@@ -291,7 +304,7 @@ LogItem.prototype.toString = function() {
 
 	var self = this;
 
-	return '[D ' + self.getCreatedTimeAsString() + '] ' + self.tag + ' / ' + self.text;
+	return '[' + self.getTypeInitial() + ' ' + self.getCreatedTimeAsString() + '] ' + self.tag + ' / ' + self.text;
 
 };
 

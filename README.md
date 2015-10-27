@@ -52,9 +52,9 @@ Get an array as serialized logs.
 
 Each item includes additional properties as follows. Those properties was obtained from each methods of **LogItem** object.
 
-* createdTimeStr - Same as getCreatedTimeAsString method -- e.g. "12:00:00"
-* typeInitial - e.g. "D"; It means "debug".
-* string - Same as toString method
+* createdTimeStr - Same as **getCreatedTimeAsString()** method -- e.g. "12:00:00"
+* typeInitial - Same as **getTypeInitial()** method -- e.g. "D"; It means "debug".
+* string - Same as **toString()** method
 
 #### debug(tag, text)
 Insert a debug log.
@@ -69,7 +69,7 @@ Insert a error log. That usage is same with **debug(tag, text)** method.
 Insert a information log. That usage is same with **debug(tag, text)** method.
 
 #### log(tag, text)
-An alias of debug(tag, text) method.
+An alias of **debug(tag, text)** method.
 
 #### warn(tag, text)
 Insert a warning log. That usage is same with **debug(tag, text)** method.
@@ -98,6 +98,9 @@ Get a log text as String object.
 
 #### getType()
 Get a log type as String object -- e.g. "debug"
+
+#### getTypeInitial()
+Get an initial character of a log type as String object -- e.g. "D"
 
 #### toString()
 Get a log item as a string. e.g. "[D 12:00:00] main / ...".
